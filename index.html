@@ -32,6 +32,7 @@ h2{font-family:"Barlow Condensed",sans-serif;font-size:26px;margin:30px 0 4px;le
 .name{font-weight:600;font-size:17px;line-height:1.2}
 .meta{display:flex;gap:6px;align-items:center;margin-top:4px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
 .tag{font-weight:600;border-radius:999px;padding:2px 9px;font-size:12px}
+.t-novo{background:var(--gold);color:#14110a;font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-size:11px}
 .t-aprovada{background:rgba(76,199,130,.15);color:var(--ok)}.t-previa{background:rgba(142,155,255,.15);color:var(--blue)}.t-finalizada{background:rgba(76,199,130,.28);color:var(--ok);font-weight:700}
 .t-enviada{background:rgba(142,155,255,.16);color:var(--blue)}
 .t-finalizando{background:rgba(230,169,58,.14);color:var(--gold)}
@@ -117,7 +118,7 @@ fetch("musicas.json?v="+Date.now()).then(r=>r.json()).then(d=>{
     row.append(el("div","n",m.n));
     const info=el("div","info");info.append(el("div","name",m.versao?m.nome+" ("+m.versao+")":m.nome));
     const meta=el("div","meta");if(m.versao)meta.append(el("span",null,"Versão "+m.versao));
-    meta.append(el("span","tag t-"+m.status,ST[m.status]));info.append(meta);row.append(info);
+    meta.append(el("span","tag t-"+m.status,ST[m.status]));{const k="ouvido:"+m.nome+"|"+(m.versao||"");let ok=false;try{ok=!!localStorage.getItem(k)}catch(e){}if(m.novo&&!ok){const nv=el("span","tag t-novo","Novo");meta.append(nv);card.addEventListener("click",e=>{if(!e.target.closest(".play"))return;try{localStorage.setItem(k,"1")}catch(e){}nv.remove()})}}info.append(meta);row.append(info);
     if(m.mp3){const b=el("button","play");b.type="button";b.innerHTML=PLAY;b.setAttribute("aria-label","Ouvir "+m.nome);
       b.onclick=()=>toggle(m,card,b);row.append(b)}
     card.append(row);

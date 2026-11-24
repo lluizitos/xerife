@@ -44,16 +44,18 @@
    "status": "finalizada",
    "mp3": "1w7KARURSZWbG44ZT2VHLYSa18Th9XWQR",
    "wav": "1zSc5fcgE3U8cu_C4wZY1KzyozW6T0wBv",
-   "ouvir": "audio/cabeca-m3-1.mp3"
+   "ouvir": "audio/cabeca-m3-1.mp3",
+   "novo": "2026-11-24"
   },
   {
    "n": 6,
    "nome": "Turbinada",
-   "versao": "M3",
+   "versao": "M3.1",
    "status": "finalizada",
-   "mp3": "1bk7myUzj62nCXlOw86wkjdjE49dIp2P5",
-   "wav": "1jhSAJC0_8cmnsEzP1CVLhZVM3FS7pU6Q",
-   "ouvir": "audio/turbinada-m3.mp3"
+   "mp3": "10T5i7JHHeMW-9pkhykkPmhnHoK5ayi4z",
+   "wav": "13FXnIxRWnNnd4zebxB_pg1qLqRtz8OUl",
+   "ouvir": "audio/turbinada-m3-1.mp3",
+   "novo": "2026-11-24"
   },
   {
    "n": 7,
